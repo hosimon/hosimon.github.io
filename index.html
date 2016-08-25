@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simon</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/resLoader.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="preloadPage">
+        
+        <div class="ploadMain">
+            <div class="ploadInfo">页面疯狂加载中...</div>
+            <div class="ploadLine">
+                <i></i>
+            </div>
+        </div>
+    </div>
+    
+    <ul id="menu">
+        <li data-menuanchor="page1" class="active"><a href="#page1"><span>首页</span></a></li>
+        <li data-menuanchor="page2"><a href="#page2"><span>关于我</span></a></li>
+        <li data-menuanchor="page3"><a href="#page3"><span>职业技能</span></a></li>
+        <li data-menuanchor="page4"><a href="#page4"><span>个人履历</span></a></li>
+        <li data-menuanchor="page5"><a href="#page5"><span>作品展示</span></a></li>
+        <li data-menuanchor="page6"><a href="#page6"><span>联系我</span></a></li>
+    </ul>
+
+    <div id="fullpage"> 
+
+        <div class="section section1">
+        
+            <div id="mainHeader">
+                <div class="hdLeft">
+                    <div class="hdicon">
+                        <img src="images/x1.jpg" alt="">
+                    </div>
+                    <div class="hdinfo">
+                        <div class="hdinfo-top">Simon</div>
+                        <div class="hdinfo-bot">个人简历</div>
+                    </div>
+                </div>
+                <div class="hdRight">
+                    <ul>
+                        <li><a href="#page1">首页</a></li>
+                        <li><a href="#page2">关于我</a></li>
+                        <li><a href="#page3">职业技能</a></li>
+                        <li><a href="#page4">个人履历</a></li>
+                        <li><a href="#page5">作品展示</a></li>
+                        <li><a href="#page6">联系我</a></li>
+                    </ul>
+                    <div class="tit-line"></div>
+                </div>
+            </div>
+        
+            
+            <div id="top-mainBg" class="moveDiv" >
+                <div class="img_blue draw show3D" data-mouse-move="0.1" data-newnew="1"> </div>
+                <div class="img_red draw show3D" data-mouse-move="0.2"> </div>
+                <div class="img_linteblue draw show3D" data-mouse-move="0.4"> </div>
+                <div class="img_lintered draw show3D" data-mouse-move="0.8"> </div>
+                <div class="img_yellow draw show3D" data-mouse-move="1.2"> </div>
+                <div class="draw img_person show3D" data-mouse-move="0.05"></div>
+                <div class="dots_far draw show3D" data-mouse-move="1.5"> </div>
+                <div class="dots_close draw show3D" data-mouse-move="2"> </div>
+            </div> 
+        </div>
+
+        <div class="section item">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <img src="images/glass.png" alt="">
+                    <h4>基本信息</h4>
+                    <p>
+                        姓名:&nbsp; &nbsp;欧贤铭&nbsp;&nbsp; 男
+                        <br>
+                        年龄: &nbsp;23岁&nbsp; 籍贯：&nbsp;漳州
+                    </p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <img src="images/hat.png" alt="">
+                    <h4>毕业院校</h4>
+                    <p>
+                        泉州理工学院
+                    </p>
+
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <img src="images/book.png" alt="">
+                    <h4>学历和专业</h4>
+                    <p>
+                        酒店管理 &nbsp;专科
+                    </p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3">
+                    <img src="images/tel.png" alt="">
+                    <h4>联系方式</h4>
+                    <p>
+                        邮箱：&nbsp;1130390978@qq.com
+                        <br>
+                        电话：&nbsp;15559577098
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+        <div class="section section2">
+            <div class="bg">
+                <img src="images/jn.jpg" alt="jn.jpg">
+            </div>
+            <div class="bg-jn2"></div>
+            <h3>职业技能</h3>
+            <div class="middle">
+                <div class="left2">
+                    <div class="left2-1"></div>
+                    <div class="left2-2"></div>
+                </div>
+                <div class="right2">
+                    <div class="qdjn info">
+                        <h5>前端技能：</h5>
+                        <ul>
+                            <li>1. 熟悉JavaScript、CSS3、HTML5等进行Web标准开发</li>
+                            <li>2. 熟悉jQuery、AngularJS框架，快速进行前端开发。</li>
+                            <li>3. 精通HTML5、CSS3,能够熟练使用Bootstrap、Less进行前端开发。</li>
+                            <li> 5. 了解前端安全的知识，能够简单测试并解决漏洞并利用现有平台布置防御措施。</li>
+                            <li>6. 使用Git版本控制进行多人合作开发。</li>
+                        </ul>
+                    </div>
+                    <div class="qtjn info">
+                        <h5>相关技能：</h5>
+                        <ul>
+                            <li>1. 熟悉域名的解析、检测、部署的各种方案</li>
+                            <li>2. 熟练使用Linux CentOS系统对网站进配置、维护、检测</li>
+                            <li>3. 熟悉局域网环境，能够快速排查解决各种问题</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section section3">
+            <div class="bg">
+                <img src="images/tp.png" alt="llbg.jpg">
+            </div>
+            <div class="bg3 bg31"></div>
+            <div class="bg3 bg32"></div>
+            <div class="bg3 bg33"></div>
+            <h3>个人履历</h3>
+            <div class="leftInfo">
+                <div class="shuxian"></div>
+                <div class="xiexian xie1"></div>
+                <div class="xiexian xie2"></div>
+                <div class="po-info">
+                    <div class="llTime llTime1">2015.8 ~ 2016.7</div>
+                    <div class="llInfo1">
+                        <h6>福建轰趴兔网络科技有限公司</h6>
+                        <ul class="intro">
+                            <li>1.负责基于HTML5、CSS、Javascript的web应用前端开发。</li>
+                            <li>2.与UI设计师积极合作,完成页面的前端实现</li>
+                            <li>3.与后端开发工程师积极合作,完成前端与后端的整合</li>
+                            <li>4.负责前端技术架构设计与应用,编写可复用的用户界面组建</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="section section4">
+            <div class="bg">
+                <img src="images/psd21642.jpg" alt="zpbg.jpg">
+            </div>
+            <h3>作品展示</h3>
+            <!-- <div class="bg41"></div> -->
+            <div class="bg42"></div>
+            <div class="zpmid">
+                <ul>
+                    <li>
+                        <!-- <img src="images/zuopin1.jpg"> -->
+                        <a href="http://hosimon.github.io/" target="_blank">
+                            <div class="zp-info-bg">
+                                <span>点击打开</span>
+                                <div class="zp-loading">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </a>
+                        <p>个人简历</p>
+                    </li>
+                    <li>
+                        <!-- <img src="images/zuopin2.jpg"> -->
+                        <a href="http://www.qdkaitai.com" target="_blank">
+                            <div class="zp-info-bg">
+                                <span>点击打开</span>
+                                <div class="zp-loading">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </a>
+                        <p>此站为医院门户站，模块及功能不多说，主要特点是全站可自行DIY不需进后台编辑。</p>
+                    </li>
+                    <li><!-- <img src="images/zuopin3.jpg"> --><p>手机          app版简历，由于时间问题，正在开发中...</p></li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="section section5 fp-auto-height">           
+            <div class="s5-mid">
+                <div class="s5-tit">
+                    <div class="s5-tit-info"></div>
+                    <div class="s5-tit-bg"></div>
+                </div>
+                <div class="s5-content">
+                    <div class="contact_scale footer">
+                    <a href="http://blog.csdn.net/ousimon" target="_blank">CSDN</a>&nbsp;|&nbsp;
+                    <a href="http://weibo.com/3476933891/" target="_blank">
+                        <img src="images/sina-weibo.png">
+                    </a>&nbsp;|&nbsp;
+                    <a href="https://github.com/hosimon" target="_blank">
+                    <img src="images/github.png"></a>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
