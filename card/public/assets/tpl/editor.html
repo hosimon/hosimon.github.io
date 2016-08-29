@@ -1,0 +1,53 @@
+<div class="container">
+    <main>
+        <form novalidate name="myForm" ng-submit="doSave()">
+            <div>姓名：<span for="name"></span></div>
+            <div>
+                <input type="text" name="name" ng-model="data.name" autofocus required ng-minlength="2" placeholder="请输入姓名">
+                <span ng-show="myForm.name.$invalid && myForm.name.$error.required && myForm.name.$dirty">姓名不能为空</span>
+                <span ng-show="myForm.name.$invalid && myForm.name.$error.minlength && myForm.name.$dirty">最小长度为2</span>
+            </div>
+            <!--<p>-->
+                <!--{{myForm.name.$invalid}}-->
+                <!--{{myForm.name.$error.required}}-->
+                <!--{{myForm.name.$dirty}}-->
+            <!--</p>-->
+            <div>职位：<span for="title"></span></div>
+            <div>
+                <input type="text" name="title" ng-model="data.title" placeholder="请输入职位">
+            </div>
+            <div>地址：<span for="address"></span></div>
+            <div>
+                <input type="text" name="address" ng-model="data.address" placeholder="请输入详细地址">
+            </div>
+            <div>手机号：<span for="phone"></span></div>
+            <div>
+                <input type="text" name="phone" ng-model="data.phone" required ng-pattern="'1[3578][0-9]{9}'" placeholder="请输入手机号">
+                <span ng-show="myForm.phone.$invalid && myForm.phone.$error.required && myForm.phone.$dirty">手机号不能为空</span>
+                <span ng-show="myForm.phone.$invalid && myForm.phone.$error.pattern && myForm.phone.$dirty">手机号格式错误</span>
+            </div>
+            <div>QQ号：<span for="qq"></span></div>
+            <div>
+                <input type="text" name="qq" ng-model="data.qq" required ng-pattern="'[1-9][0-9]{5,10}'" placeholder="请输入QQ号">
+                <span ng-show="myForm.qq.$invalid && myForm.qq.$error.required && myForm.qq.$dirty">qq不能为空</span>
+                <span ng-show="myForm.qq.$invalid && myForm.qq.$error.pattern && myForm.qq.$dirty">请输入正确的qq号</span>
+            </div>
+            <div>电子邮箱：<span for="email"></span></div>
+            <div>
+                <input type="email" name="email" ng-model="data.email" required placeholder="请输入电子邮箱地址">
+                <span ng-show="myForm.email.$invalid && myForm.email.$error.required && myForm.email.$dirty">邮箱不能为空</span>
+                <span ng-show="myForm.email.$invalid && myForm.email.$dirty">请输入正确的email地址</span>
+            </div>
+            <div>介绍：<span for="description"></span></div>
+            <div>
+                <textarea name="description" ng-model="data.description" placeholder="请输入个人简介"></textarea>
+            </div>
+            <div class="save-container">
+                <button type="submit" ng-disabled="myForm.$invalid" class="edit">保存</button>
+            </div>
+            <!--<p>-->
+                <!--{{myForm.$invalid | json}}-->
+            <!--</p>-->
+        </form>
+    </main>
+</div>

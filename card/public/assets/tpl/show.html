@@ -1,0 +1,36 @@
+<div class="container">
+    <main>
+        <article>
+            <img class="logo" src="/assets/images/logo.png" />
+            <h1>
+                {{data.name}}<small>{{data.title}}</small></h1>
+            <address>
+                <p class="addr">
+                    {{data.address}}
+                </p>
+                <p class="tel">
+                    {{data.phone}}
+                </p>
+                <p class="qq">
+                    {{data.qq}}
+                </p>
+                <p class="email">
+                    {{data.email}}
+                </p>
+            </address>
+            <img class="pic" src="/assets/images/xrk.png" />
+        </article>
+        <aside>
+            <div class="photo"></div>
+            <p>
+                {{data.description}}
+            </p>
+        </aside>
+    </main>
+    <div class="btn-group">
+        <a class="edit" href="#/index">列表</a>
+        <a class="edit" href="#/add">新增</a>
+        <a class="edit" href="#/editor/{{data.id}}">编辑</a>
+    </div>
+</div>
+

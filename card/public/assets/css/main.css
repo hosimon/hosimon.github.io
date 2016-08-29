@@ -1,0 +1,180 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    background-color:#444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+article{
+    width: 500px;
+    height: 300px;
+    padding: 30px 30px 20px 30px;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom, rgb(238,151,20) ,rgb(187,142,1));
+    color:white;
+    box-shadow:1px 3px 5px #222;
+    transform:rotate(10deg);
+    position:relative;
+    overflow:hidden;
+    z-index: 10;
+}
+.pic{
+    width:300px;
+    height:300px;
+    position:absolute;
+    bottom:20px;
+    right:-120px;
+    opacity: 0.9;
+    transform: rotate(7deg);
+}
+.logo{
+    width: 40%;
+}
+h1{
+    font-size:30px;
+}
+small{
+    font-size:15px;
+    line-height:25px;
+    display:block;
+    font-weight:normal;
+}
+address{
+    font-style:normal;
+    line-height:180%;
+    font-size:15px;
+}
+.addr:before{
+    content:'地址：';
+}
+.tel:before{
+    content:'手机：';
+}
+.qq:before{
+    content:'QQ：';
+}
+.email:before{
+    content:'电子邮箱：';
+}
+p{
+    margin:0;
+}
+.tel{
+    float:left;
+}
+.qq{
+    display:inline-block;
+    margin-left:30px;
+}
+
+aside{
+    width: 500px;
+    height: 300px;
+    padding: 30px 25px 20px 25px;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom, rgb(238,151,20) ,rgb(187,142,1));
+    box-shadow:1px 3px 5px #222;
+    transform: rotate(-1deg) translate(30px, 0);
+}
+.photo{
+    float:left;
+    margin-top:50px;
+    height:110px;
+    width:110px;
+    border-radius:50%;
+    border:solid 6px white;
+    background-image:url(../images/photo.jpg);
+    background-position:60% 30%;
+    background-size:110px 110px;
+}
+aside p{
+    color:white;
+    text-indent:2em;
+    float:right;
+    width:310px;
+    margin-top:65px;
+    line-height: 150%;
+}
+.btn-group{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.edit{
+    border: 1px solid #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: beige;
+    text-decoration: none;
+}
+.edit:hover{
+    color: rgb(238,151,20);
+    border-color: rgb(238,151,20);
+}
+form{
+    margin: auto;
+    width: 300px;
+    border: 1px solid #000;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    line-height: 2.5em;
+    font-size: 0.9rem;
+    box-shadow: 0 0 3px #000;
+}
+form input,form textarea{
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: 微软雅黑;
+    resize: none;
+}
+form input[type=submit]{
+    margin-top: 15px;
+    background-color:rgb(238,151,20);
+    cursor: pointer;
+}
+.error{
+    border-color: yellow;
+    background-color: rgba(255, 0, 0, 0.5);
+    color: white;
+}
+form span{
+    color:red;
+}
+
+.cards{ 
+    border: 1px solid #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width:80%;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #fff;
+
+}
+.cards tr{
+    border: 1px solid #000;
+}
+.cards a{
+    color: #fff;
+}
+.save-container{
+    padding-top: 10px;
+    text-align: center;
+}
+.ng-enter {
+    animation: fadeIn 1s;
+}

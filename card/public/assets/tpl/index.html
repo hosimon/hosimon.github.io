@@ -1,0 +1,31 @@
+<div class="container">
+    <table class="cards">
+        <tr>
+            <td>姓名</td>
+            <td>tel</td>
+            <td>email</td>
+            <td>qq</td>
+            <td>操作</td>
+        </tr>
+
+        <tr ng-repeat="item in data">
+            <td>
+                <a href="#/show/{{item.id}}">
+                    {{item.name}}
+                </a>
+            </td>
+            <td>
+                {{item.phone}}
+            </td>
+            <td>
+                {{item.email}}
+            </td>
+            <td>
+                {{item.qq}}
+            </td>
+            <td><a class="btn-del" href="javascript:void(0)" ng-click="doDelete(item.id)">删除</a></td>
+        </tr>
+
+    </table>
+    <a href="#/add" class="edit" style="right:80px; position: relative;left: 85%; top: 20px;">新增</a>
+</div>
