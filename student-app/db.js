@@ -1,7 +1,7 @@
-////引入mongoose模块
+//引入mongoose模块
 var db = require('mongoose');
 
-//// 链接数据库 mongodb 协议, localhost 主机ip, student_db 数据库名称
+// 链接数据库 mongodb 协议, localhost 主机ip, student_db 数据库名称
 db.connect('mongodb://localhost/student_db');
 
 

@@ -5,9 +5,8 @@
 $.validator.setDefaults({
     errorElement: 'span',
     errorClass: 'help-block',
-    ////结合bootstrap实现效果
+
     highlight: function (element) {
-        /////closest() 方法获得匹配选择器的第一个祖先元素
         $(element).closest('.form-group').addClass('has-error');
     },
     success: function (label) {

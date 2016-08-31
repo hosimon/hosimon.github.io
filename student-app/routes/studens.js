@@ -39,17 +39,6 @@ router.get('/list/:page', function (req, res, next) {
     var maxAge = req.query.maxAge;
     var minAge = req.query.minAge;
 
-    /****
-     * 
-     * es6版本中字符串替换的方法
-     * var name = "小明";
-     * var age = 18;
-     * `我的名字是${name},我今天${age}岁了`
-     * 
-     */
-
-
-
     if (!!name) {
         filter.name = { '$regex': `.*?${name}.*?` };
     }
@@ -73,54 +62,39 @@ router.get('/list/:page', function (req, res, next) {
     var pageSize = 3
     // console.log(page);
 
-    ///total是根据条件查询到的总数量
+
     db.Student.find(filter).count((err, total) => {
         if (err) {
             console.log(err);
         }
-        /////总页数(总共有多少页)
+        //总页数(总共有多少页)
         var pageCount = Math.ceil(total / pageSize);
 
-        ////此处做页面范围限制
+        //此处做页面范围限制
         if (page > pageCount) {
             page = pageCount
         }
         if (page < 1) {
             page = 1
         }
-        /////query 按条件查询
-        /////sort按时间排序create_time排序还有些疑问 待解读
-        ///.sort('-create_time')
-        ////分页获取数据计算思路
-        // skip跳过当前页码-1的页数的数据
-        // limit取当前需要的一页显示的数量
+      
         db.Student.find(filter).skip((page - 1) * pageSize)
             .limit(pageSize).sort({ '_id': -1 }).exec((err, data) => {
                 data.forEach(function (item) {
                     //console.log(moment(item.birthday).format('YYYY-MM-DD'));
-                    ////新增一个属性 用于村相互需要在页面上展示的日期时间值
+                    //新增一个属性 用于村相互需要在页面上展示的日期时间值
                     item.birthdayForShow = moment(item.birthday).format('YYYY-MM-DD');
                 })
                 res.render('studens/list', {
-                    data: data,///table中需要遍历的数据
-                    pages: getPages(page, pageCount),///分页中显示的页码
-                    page: page,//当前页
-                    pageCount: pageCount///总页数
+                    data: data,
+                    pages: getPages(page, pageCount),
+                    page: page,
+                    pageCount: pageCount
                 });
             })
     })
 
-    /////query 按条件查询
-    // db.Student.find(filter).exec((err, data) => {
-    //     data.forEach(function (item) {
-    //         //console.log(moment(item.birthday).format('YYYY-MM-DD'));
-    //         ////新增一个属性 用于村相互需要在页面上展示的日期时间值
-    //         item.birthdayForShow = moment(item.birthday).format('YYYY-MM-DD');
-    //     })
-    //     res.render('studens/list', {
-    //         data: data
-    //     });
-    // })
+   
 });
 
 /**
@@ -130,19 +104,17 @@ router.get('/list/:page', function (req, res, next) {
  * @return {[type]}               [description]
  */
 router.get('/editor/:id', function (req, res, next) {
-    /////根据id去查找数据
+    //根据id去查找数据
     var id = req.params.id;
-    //////通过id去数据库中查找数据
+    //通过id去数据库中查找数据
     db.Student.findById(id, (err, data) => {
-        if (data) { /////如果找到了 表示修改
-            //console.log('data存在')
-            ///格式化出一个日期字符串数据 用于在页面修改的时候显示
+        if (data) {
+            //格式化出一个日期字符串数据 用于在页面修改的时候显示
             data.birthdayForShow = moment(data.birthday).format('YYYY-MM-DD');
             console.log(data.birthdayForShow);
             console.log('编辑');
         }
-        else { ////如果没有找到 表示新增
-            //console.log('data不存在')
+        else {
             data = new db.Student();
             console.log('新增');
         }
@@ -150,42 +122,17 @@ router.get('/editor/:id', function (req, res, next) {
         res.render('studens/editor', { data: data });
     })
 
-    ////////通过以上简单的判断即可实现以下效果,so 注释掉一下代码 使用👌好用的以上方法
-    // if (!!id && id != "0") {
-    //     db.Student.findById(id, (err, data) => {
-    //         if(data){
-    //             console.log('data存在')
-    //         }
-    //         else{
-    //             console.log('data不存在')
-    //         }
-    //         data.birthdayForShow = moment(data.birthday).format('YYYY-MM-DD');
-    //         console.log(data.birthdayForShow);
-    //         console.log('编辑');
-    //         res.render('studens/editor', { data: data });
-    //     })
-    // }
-    // else {
-    //     var data = new db.Student();
-    //     console.log(data);
-    //     console.log('新增');
-    //     res.render('studens/editor', { data: data });
-    // }
-
+   
 })
 
 router.post('/editor/:id', function (req, res, next) {
-    // res.render('studens/editor');
-
-    ///db.Student.
     var id = req.params.id;
-    /////获取从页面中传递过来的数据
+    //获取从页面中传递过来的数据
     var student = req.body;
 
-    //////通过页面传递过来的出生年月计算年龄
+    //通过页面传递过来的出生年月计算年龄
     student.age = ((new Date()).getFullYear()) - (new Date(req.body.birthday)).getFullYear();
 
-    /////此处的参数upsert 当我的记录没有找到的时候就新增 如果找到了那么进行修改操作
     db.Student.findByIdAndUpdate(id, student, { upsert: true }, (err) => {
         if (err) {
             console.log(err);
@@ -193,15 +140,7 @@ router.post('/editor/:id', function (req, res, next) {
         res.redirect('/student/list/1');
     });
 
-    // var student = new db.Student(req.body);
-    // console.log('执行新增');
-    // student.age = ((new Date()).getFullYear()) - (new Date(req.body.birthday)).getFullYear();
-    // student.save((err) => {
-    //     if (err) {
-    //         console.log(err);
-    //     }
-    //     res.redirect('/student/list');
-    // })
+ 
 })
 
 /**

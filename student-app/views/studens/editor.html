@@ -591,10 +591,10 @@
         ///birthday
         $(function(){
             $('#birthday').datepicker({
-                format: "yyyy-mm-dd", /////格式化选择结果
-                language: "zh-CN",////使用简体中文插件
-                autoclose: true,////自动关闭
-                todayHighlight: true/////高亮显示当前日期
+                format: "yyyy-mm-dd",
+                language: "zh-CN",
+                autoclose: true,
+                todayHighlight: true
             });
 
             /////设置性别选中
@@ -608,16 +608,16 @@
 
             $("#imgCtrl").click(function(){$("#selectFile").click()});
 
-            ////html5Uploader 标准配置方法
+            //html5Uploader 标准配置方法
             $("#selectFile").html5Uploader({
                 name: "Filedata",
-                postUrl: "/common/file/uploadfile", ////图片上传的post提交地址
-                onSuccess: function (msg) { /////上传成功后的回调函数
+                postUrl: "/common/file/uploadfile", 
+                onSuccess: function (msg) { 
                     //console.log(msg);
                     try {
                         var url = JSON.parse(msg.currentTarget.response).url;
-                        $("#imgCtrl").attr("src", url); ////指定img控件的src属性
-                        $("#iAvatar").val(url); /////服务器端接收时需要获取的标签
+                        $("#imgCtrl").attr("src", url); 
+                        $("#iAvatar").val(url); 
                     }
                     catch (e) {
                         console.log(e);
